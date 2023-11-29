@@ -54,6 +54,7 @@ exports.commandMap = function (definitionSet, vscode, visibilityUpdater) {
         vscode.window.showQuickPick(options, {
         placeHolder: definitionSet.volatileCommands.commandSelectionTitle,
         }).then(answer => {
+            if (!answer) return;
             const toggleTarget =
                 answer == definitionSet.volatileCommands.targetClipboard ||
                 answer == definitionSet.volatileCommands.targetEditor
