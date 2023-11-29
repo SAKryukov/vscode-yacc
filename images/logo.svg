@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="640"
+   height="640"
+   viewBox="0 0 640 640.00003"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1">
+    <rect
+       style="fill:#ffcc00;stroke-width:4;stroke-linecap:round;paint-order:stroke fill markers"
+       id="rect9"
+       width="640"
+       height="640"
+       x="-2e-06"
+       y="8.7917024e-06" />
+    <g
+       id="g9"
+       transform="matrix(3.7282376,0,0,3.6913243,-372.66905,-1074.0253)"
+       style="stroke-width:0.269561;fill:#1c0066;fill-opacity:1">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:85.3333px;font-family:Calibri;-inkscape-font-specification:'Calibri Bold';fill:#1c0066;stroke-width:1.07825;stroke-linecap:round;paint-order:stroke fill markers;fill-opacity:1"
+         x="142.134"
+         y="415.28537"
+         id="text4"><tspan
+           id="tspan4"
+           x="142.134"
+           y="415.28537"
+           style="stroke-width:1.07825;fill:#1c0066;fill-opacity:1">a</tspan></text>
+      <path
+         style="font-weight:bold;font-size:85.3333px;font-family:Calibri;-inkscape-font-specification:'Calibri Bold';fill:#1c0066;stroke-width:1.07825;stroke-linecap:round;paint-order:stroke fill markers;fill-opacity:1"
+         d="m 257.40032,407.95204 q 0,1.08333 -0.0833,1.83333 -0.0417,0.70834 -0.16666,1.20833 -0.0833,0.5 -0.25,0.83334 -0.125,0.29166 -0.625,0.79166 -0.5,0.45834 -1.70833,1.16667 -1.20834,0.66667 -2.75,1.20833 -1.54167,0.54167 -3.375,0.875 -1.79167,0.33334 -3.70833,0.33334 -4.29167,0 -7.625,-1.33334 -3.29167,-1.33333 -5.54167,-3.91666 -2.24999,-2.625 -3.41666,-6.375 -1.125,-3.75 -1.125,-8.58333 0,-5.58333 1.375,-9.62499 1.41667,-4.08334 3.91666,-6.75 2.5,-2.66667 5.91667,-3.95833 3.41666,-1.29167 7.5,-1.29167 1.66666,0 3.24999,0.29167 1.625,0.29166 3,0.79166 1.41667,0.5 2.5,1.125 1.125,0.625 1.58333,1.08334 0.45834,0.45833 0.625,0.79166 0.20834,0.29167 0.29167,0.79167 0.125,0.5 0.16667,1.25 0.0833,0.70833 0.0833,1.75 0,2.41666 -0.41667,3.41666 -0.41666,0.95834 -1.08333,0.95834 -0.70833,0 -1.5,-0.58334 -0.79166,-0.58333 -1.875,-1.29166 -1.08333,-0.70834 -2.58333,-1.29167 -1.5,-0.58333 -3.58333,-0.58333 -4.08333,0 -6.25,3.16666 -2.16666,3.125 -2.16666,9.20833 0,3 0.54166,5.29167 0.54167,2.29166 1.58333,3.83333 1.08334,1.54166 2.66667,2.33333 1.625,0.75 3.75,0.75 2.16666,0 3.70833,-0.625 1.58333,-0.66667 2.75,-1.45833 1.16667,-0.79167 1.95833,-1.41667 0.79167,-0.66667 1.33333,-0.66667 0.375,0 0.625,0.20834 0.25,0.20833 0.375,0.79166 0.16667,0.54167 0.25,1.41667 0.0833,0.875 0.0833,2.25 z"
+         id="path9" />
+      <path
+         style="font-weight:bold;font-size:85.3333px;font-family:Calibri;-inkscape-font-specification:'Calibri Bold';fill:#1c0066;stroke-width:1.07825;stroke-linecap:round;paint-order:stroke fill markers;fill-opacity:1"
+         d="m 222.91858,403.63644 q 0,1.44284 -0.0833,2.48169 -0.0417,0.98115 -0.16667,1.73142 -0.125,0.69257 -0.33333,1.21199 -0.20833,0.51943 -0.66667,1.212 -0.45833,0.63485 -1.79166,1.6737 -1.29167,1.03885 -3.20834,2.02 -1.87499,0.92341 -4.33333,1.55827 -2.41666,0.63485 -5.24999,0.63485 -5.54167,0 -10,-2.36626 -4.45833,-2.36629 -7.58333,-7.04111 -3.125,-4.73255 -4.79167,-11.77365 -1.66666,-7.0411 -1.66666,-16.39077 0,-9.5228 1.83333,-16.91019 1.83333,-7.38738 5.125,-12.4085 3.29166,-5.02112 7.875,-7.61823 4.62499,-2.59713 10.16666,-2.59713 2.25,0 4.33333,0.51942 2.08333,0.51943 3.83333,1.38514 1.79167,0.80799 3.20833,1.90455 1.41667,1.09657 1.95834,1.90456 0.58333,0.75029 0.79166,1.26971 0.20834,0.51943 0.33334,1.32742 0.125,0.808 0.16666,1.90456 0.0833,1.09657 0.0833,2.71257 0,1.7314 -0.0833,2.9434 -0.0833,1.21199 -0.29166,1.96228 -0.20834,0.75028 -0.5,1.09657 -0.29167,0.34628 -0.66667,0.34628 -0.625,0 -1.58333,-0.98115 -0.95834,-1.03885 -2.5,-2.25084 -1.5,-1.2697 -3.625,-2.25083 -2.08333,-1.03886 -5,-1.03886 -3.20833,0 -5.75,1.84685 -2.49999,1.78912 -4.29166,5.19426 -1.75,3.3474 -2.66667,8.13765 -0.91666,4.79027 -0.91666,10.79252 0,6.5794 0.95833,11.42736 1,4.79027 2.79167,7.90682 1.83333,3.11654 4.37499,4.67482 2.58334,1.50057 5.79167,1.50057 2.91666,0 5.04166,-0.92342 2.125,-0.98114 3.625,-2.13543 1.54167,-1.15427 2.5,-2.0777 1,-0.92341 1.54167,-0.92341 0.41666,0 0.66666,0.23086 0.25,0.23084 0.41667,0.92341 0.16667,0.69257 0.25,1.96228 0.0833,1.212 0.0833,3.2897 z"
+         id="text7" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:100.43px;font-family:Calibri;-inkscape-font-specification:'Calibri Bold';fill:#1c0066;stroke-width:1.07825;stroke-linecap:round;paint-order:stroke fill markers;fill-opacity:1"
+         x="133.42679"
+         y="352.57208"
+         id="text8"
+         transform="scale(0.84967701,1.1769178)"><tspan
+           id="tspan8"
+           x="133.42679"
+           y="352.57208"
+           style="fill:#1c0066;stroke-width:1.07825;fill-opacity:1">Y</tspan></text>
+    </g>
+  </g>
+  <metadata
+     id="metadata1">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Sergey A Kryukov</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:publisher>
+          <cc:Agent>
+            <dc:title>Sergey A Kryukov</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:identifier>SA</dc:identifier>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/" />
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/by-sa/4.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Notice" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Attribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#ShareAlike" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>
