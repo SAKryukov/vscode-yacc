@@ -40,24 +40,41 @@ exports.createStringUtilitySet = definitionSet => {
     }; //clearSplit
 
     const lowerFirstCharacterCase = text =>
-        text[0].toLowerCase() + text.substring(1);
+        text.length > 0 ? text[0].toLowerCase() + text.substring(1) : text;
 
-    const titleCase = text => {
-        const split = clearSplit(text);
+    const forEachLine = (text, converter) => {
+        const split = text.split(definitionSet.typography.lineSeparator);
+        const result = [];
+        for (let element of split)
+            result.push(converter(element.trim()))
+        return result.join(definitionSet.typography.lineSeparator);
+    }; //forEachLine
+
+    const titleCaseLine = line => {
+        const split = clearSplit(line);
         const result = [];
         for (let element of split)
             result.push(element[0].toUpperCase() + element.substring(1).toLowerCase());
         return result.join(definitionSet.typography.blankspace);
-    }; //titleCase
+    } //titleCaseLine
 
-    const removeDelimiters = text => {
+    const titleCase = text => forEachLine(text, line => titleCaseLine(line));
+
+    const camelCase = text => forEachLine(text, line => 
+        lowerFirstCharacterCase(titleCaseLine(line))
+        .replaceAll(definitionSet.typography.blankspace, definitionSet.empty));
+
+    const programmingSyntax = (text, punctuation) => forEachLine(text, line =>
+        clearSplit(line).join(punctuation));
+    
+    const removePunctuation = text => {
         return text
-            .replaceAll(definitionSet.typography.dotDelimiter, definitionSet.typography.blankspace)
-            .replaceAll(definitionSet.typography.pathDelimiter, definitionSet.typography.blankspace)
-            .replaceAll(definitionSet.typography.dashDelimiter, definitionSet.typography.blankspace)
-            .replaceAll(definitionSet.typography.underscoreDelimiter, definitionSet.typography.blankspace);
-    } //removeDelimiters
+            .replaceAll(definitionSet.typography.dotSeparator, definitionSet.typography.blankspace)
+            .replaceAll(definitionSet.typography.pathSeparator, definitionSet.typography.blankspace)
+            .replaceAll(definitionSet.typography.dashSeparator, definitionSet.typography.blankspace)
+            .replaceAll(definitionSet.typography.underscoreSeparator, definitionSet.typography.blankspace);
+    } //removePunctuation
 
-    return { toggleCase, titleCase, clearSplit, removeDelimiters, lowerFirstCharacterCase, };
+    return { titleCase, camelCase, toggleCase, programmingSyntax, removePunctuation, };
 
 };

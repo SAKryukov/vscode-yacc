@@ -22,22 +22,20 @@ exports.commandMap = function (definitionSet, vscode, visibilityUpdater) {
     const map = (() => {
         const map = new Map();
         let separator = 0;
-        map.set(separator++, { label: "Case", kind: vscode.QuickPickItemKind.Separator, })
+        map.set(separator++, { label: "Case", kind: vscode.QuickPickItemKind.Separator, });
         map.set("Lower case", text => text.toLowerCase())
         map.set("Upper case", text => text.toUpperCase());
         map.set("Title case", text => stringUtilitySet.titleCase(text));
-        map.set("Camel case", text =>
-            stringUtilitySet.lowerFirstCharacterCase(stringUtilitySet.titleCase(text))
-            .replaceAll(definitionSet.typography.blankspace, definitionSet.empty));
-        map.set(separator++, { label: "Toggle case", kind: vscode.QuickPickItemKind.Separator, })
+        map.set("Camel case", text =>  stringUtilitySet.camelCase(text));
+        map.set(separator++, { label: "Toggle case", kind: vscode.QuickPickItemKind.Separator, });
         map.set("Toggle", text => stringUtilitySet.toggleCase(text));
-        map.set(separator++, { label: "Programming syntax", kind: vscode.QuickPickItemKind.Separator, })
-        map.set("Members", text => stringUtilitySet.clearSplit(text).join(definitionSet.typography.dotDelimiter));
-        map.set("Kebab case", text => stringUtilitySet.clearSplit(text).join(definitionSet.typography.dashDelimiter));
-        map.set("Snake case", text => stringUtilitySet.clearSplit(text).join(definitionSet.typography.underscoreDelimiter));
-        map.set("Path", text => stringUtilitySet.clearSplit(text).join(definitionSet.typography.pathDelimiter));
-        map.set("Remove punctuation", text => stringUtilitySet.removeDelimiters(text));
-        map.set(separator++, { label: "Where the result goes, editor or clipboard?", kind: vscode.QuickPickItemKind.Separator, })    
+        map.set(separator++, { label: "Programming syntax", kind: vscode.QuickPickItemKind.Separator, });
+        map.set("Members", text => stringUtilitySet.programmingSyntax(text, definitionSet.typography.dotSeparator));
+        map.set("Kebab case", text => stringUtilitySet.programmingSyntax(text, definitionSet.typography.dashSeparator));
+        map.set("Snake case", text => stringUtilitySet.programmingSyntax(text, definitionSet.typography.underscoreSeparator));
+        map.set("Path", text => stringUtilitySet.programmingSyntax(text, definitionSet.typography.pathSeparator));
+        map.set("Remove punctuation", text => stringUtilitySet.removePunctuation(text));
+        map.set(separator++, { label: "Where the result goes, editor or clipboard?", kind: vscode.QuickPickItemKind.Separator, });
         map.set(definitionSet.volatileCommands.targetClipboard, () => setTargetToClipboard(true));
         map.set(definitionSet.volatileCommands.targetEditor, () => setTargetToClipboard(false));
         return map;

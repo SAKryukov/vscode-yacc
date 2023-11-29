@@ -26,10 +26,11 @@ exports.definitionSet = {
     },
     typography: {
         blankspace: " ",
-        dotDelimiter: ".",
-        pathDelimiter: "/",
-        dashDelimiter: "-",
-        underscoreDelimiter: "_",
+        lineSeparator: "\n",
+        dotSeparator: ".",
+        pathSeparator: "/",
+        dashSeparator: "-",
+        underscoreSeparator: "_",
     },
     empty: "",
 };
