@@ -17,28 +17,31 @@ exports.commandMap = function (definitionSet, vscode, visibilityUpdater) {
     let lastCommand = null, targetIsClipboard = false;
 
     const repeatCommandName = definitionSet.volatileCommands.repeatCommandTitle;   
-    const map = new Map();
-
     const setTargetToClipboard = toClipboard => targetIsClipboard = toClipboard;
 
-    map.set("Case", { label: "Case", kind: vscode.QuickPickItemKind.Separator, })
-    map.set("Lower case", text => text.toLowerCase())
-    map.set("Upper case", text => text.toUpperCase());
-    map.set("Title case", text => stringUtilitySet.titleCase(text));
-    map.set("Camel case", text =>
-        stringUtilitySet.lowerFirstCharacterCase(stringUtilitySet.titleCase(text))
-        .replaceAll(definitionSet.typography.blankspace, definitionSet.empty));
-    map.set("ToggleSeparator", { label: "Toggle case", kind: vscode.QuickPickItemKind.Separator, })
-    map.set("Toggle", text => stringUtilitySet.toggleCase(text));
-    map.set("Programming ", { label: "Programming syntax", kind: vscode.QuickPickItemKind.Separator, })
-    map.set("Members", text => stringUtilitySet.clearSplit(text).join(definitionSet.typography.dotDelimiter));
-    map.set("Kebab case", text => stringUtilitySet.clearSplit(text).join(definitionSet.typography.dashDelimiter));
-    map.set("Snake case", text => stringUtilitySet.clearSplit(text).join(definitionSet.typography.underscoreDelimiter));
-    map.set("Path", text => stringUtilitySet.clearSplit(text).join(definitionSet.typography.pathDelimiter));
-    map.set("Remove punctuation", text => stringUtilitySet.removeDelimiters(text));
-    map.set("Where?", { label: "Where the result goes, editor or clipboard?", kind: vscode.QuickPickItemKind.Separator, })    
-    map.set(definitionSet.volatileCommands.targetClipboard, () => setTargetToClipboard(true));
-    map.set(definitionSet.volatileCommands.targetEditor, () => setTargetToClipboard(false));
+    const map = (() => {
+        const map = new Map();
+        let separator = 0;
+        map.set(separator++, { label: "Case", kind: vscode.QuickPickItemKind.Separator, })
+        map.set("Lower case", text => text.toLowerCase())
+        map.set("Upper case", text => text.toUpperCase());
+        map.set("Title case", text => stringUtilitySet.titleCase(text));
+        map.set("Camel case", text =>
+            stringUtilitySet.lowerFirstCharacterCase(stringUtilitySet.titleCase(text))
+            .replaceAll(definitionSet.typography.blankspace, definitionSet.empty));
+        map.set(separator++, { label: "Toggle case", kind: vscode.QuickPickItemKind.Separator, })
+        map.set("Toggle", text => stringUtilitySet.toggleCase(text));
+        map.set(separator++, { label: "Programming syntax", kind: vscode.QuickPickItemKind.Separator, })
+        map.set("Members", text => stringUtilitySet.clearSplit(text).join(definitionSet.typography.dotDelimiter));
+        map.set("Kebab case", text => stringUtilitySet.clearSplit(text).join(definitionSet.typography.dashDelimiter));
+        map.set("Snake case", text => stringUtilitySet.clearSplit(text).join(definitionSet.typography.underscoreDelimiter));
+        map.set("Path", text => stringUtilitySet.clearSplit(text).join(definitionSet.typography.pathDelimiter));
+        map.set("Remove punctuation", text => stringUtilitySet.removeDelimiters(text));
+        map.set(separator++, { label: "Where the result goes, editor or clipboard?", kind: vscode.QuickPickItemKind.Separator, })    
+        map.set(definitionSet.volatileCommands.targetClipboard, () => setTargetToClipboard(true));
+        map.set(definitionSet.volatileCommands.targetEditor, () => setTargetToClipboard(false));
+        return map;
+     })();
 
     const getPick = () => {
         const options = [];
@@ -57,26 +60,6 @@ exports.commandMap = function (definitionSet, vscode, visibilityUpdater) {
     }; //getPick
 
     this.command = (textEditor, selection, originalText) => {
-        /*
-        const quickPick = vscode.window.createQuickPick();
-        quickPick.title = "select this and that";
-        quickPick.placeHolder = "Bl";
-        quickPick.canSelectMany = true;
-        const items = [
-            { label: "Cases", kind: vscode.QuickPickItemKind.Separator, },
-            { label: "Upper case" },
-            { label: "Lower case"},
-            { label: "Blue", description: "Primary color" },
-            { label: "Super!" },
-            { label: "Programming", kind: vscode.QuickPickItemKind.Separator, },
-            { label: "1", description: "case 1" },
-            { label: "2", description: "case 2" },
-        ];
-        quickPick.items = items;
-        quickPick.selectedItems = [ items[3], items[2] ];
-        quickPick.show();
-        return;
-        */
         const options = getPick();
         vscode.window.showQuickPick(options, {
             placeHolder: definitionSet.volatileCommands.commandSelectionTitle,
