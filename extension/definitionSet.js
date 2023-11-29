@@ -21,8 +21,8 @@ exports.definitionSet = {
     volatileCommands: {
         repeatCommandTitle: "Repeat last operation",
         commandSelectionTitle: "Select Change Case Operation",
-        targetClipboard: `Target: ${String.fromCodePoint(0x2610)} clipboard `, //Ballot Box
-        targetEditor: `Target: ${String.fromCodePoint(0x2611)} clipboard`, ////Ballot Box with Check
+        targetClipboard: `${String.fromCodePoint(0x2610)} Clipboard `, //Ballot Box
+        targetEditor: `${String.fromCodePoint(0x2611)} Clipboard`, ////Ballot Box with Check
     },
     typography: {
         blankspace: " ",

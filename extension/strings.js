@@ -58,6 +58,6 @@ exports.createStringUtilitySet = definitionSet => {
             .replaceAll(definitionSet.typography.underscoreDelimiter, definitionSet.typography.blankspace);
     } //removeDelimiters
 
-    return { toggleCase, titleCase, clearSplit, removeDelimiters, lowerFirstCharacterCase, }
+    return { toggleCase, titleCase, clearSplit, removeDelimiters, lowerFirstCharacterCase, };
 
 };
