@@ -1,3 +1,13 @@
+/*
+
+Yet Another Change Case
+
+Copyright (c) Sergey A Kryukov
+https://github.com/SAKryukov/vscode-yacc
+https://www.SAKryukov.org
+
+*/
+
 "use strict";
 
 exports.definitionSet = {
