@@ -41,17 +41,35 @@ exports.createStringUtilitySet = definitionSet => {
     }; //clearSplit
 
     const splitLineByCase = text => {
-        let currentCase = null;
-        const result = [];
-        for (let index = 0; index < text.length; ++index) {
-            const character = text[index];
-            const aCase = characterCase(character);
-            if (aCase != currentCase)
-                result.push(definitionSet.typography.blankspace);
-            currentCase = aCase;    
-            result.push(character);
+        const split = text.split(definitionSet.typography.blankspace);
+        const wordSplit = [];
+        let blanks = [];
+        for (let word of split) {
+            if (word.length > 0) {
+                if (blanks.length > 0) {
+                    wordSplit.push(blanks.join(definitionSet.empty));
+                    blanks = [];
+                } //if
+                wordSplit.push(word);
+            } else {
+                blanks.push(definitionSet.typography.blankspace);
+            } //if
         } //loop
-        return result.join(definitionSet.empty).trim();
+        const convertedWordSplit = [];
+        for (let word of wordSplit) {
+            let currentCase = null;
+            const result = [];
+            for (let index = 0; index < word.length; ++index) {
+                const character = word[index];
+                const aCase = characterCase(character);
+                if (aCase != currentCase)
+                    result.push(definitionSet.typography.blankspace);
+                currentCase = aCase;    
+                result.push(character);
+            } //loop
+            convertedWordSplit.push(result.join(definitionSet.empty).trim()); 
+        } //loop
+        return convertedWordSplit.join(definitionSet.typography.blankspace);
     }; //splitLineByCase
     
     const toggleCase = text => {
