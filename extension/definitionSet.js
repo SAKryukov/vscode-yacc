@@ -29,6 +29,7 @@ exports.definitionSet = {
         dotDelimiter: ".",
         pathDelimiter: "/",
         dashDelimiter: "-",
+        underscoreDelimiter: "_",
     },
     empty: "",
 };

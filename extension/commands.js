@@ -24,12 +24,13 @@ exports.commandMap = function (definitionSet, vscode, visibilityUpdater) {
     map.set("Lower case", text => text.toLowerCase());
     map.set("Upper case", text => text.toUpperCase());
     map.set("Title case", text => stringUtilitySet.titleCase(text));
+    map.set("Members", text => stringUtilitySet.clearSplit(text).join(definitionSet.typography.dotDelimiter));
     map.set("Camel case", text =>
         stringUtilitySet.lowerFirstCharacterCase(stringUtilitySet.titleCase(text))
         .replaceAll(definitionSet.typography.blankspace, definitionSet.empty));
-    map.set("Members", text => stringUtilitySet.clearSplit(text).join(definitionSet.typography.dotDelimiter));
+    map.set("Kebab case", text => stringUtilitySet.clearSplit(text).join(definitionSet.typography.dashDelimiter));
+    map.set("Snake case", text => stringUtilitySet.clearSplit(text).join(definitionSet.typography.underscoreDelimiter));
     map.set("Path", text => stringUtilitySet.clearSplit(text).join(definitionSet.typography.pathDelimiter));
-    map.set("Dashes", text => stringUtilitySet.clearSplit(text).join(definitionSet.typography.dashDelimiter));
     map.set("Remove delimiters", text => stringUtilitySet.removeDelimiters(text));
     map.set("Toggle case", text => stringUtilitySet.toggleCase(text));
     map.set(definitionSet.volatileCommands.targetClipboard, () => setTargetToClipboard(true));

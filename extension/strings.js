@@ -52,9 +52,10 @@ exports.createStringUtilitySet = definitionSet => {
 
     const removeDelimiters = text => {
         return text
+            .replaceAll(definitionSet.typography.dotDelimiter, definitionSet.typography.blankspace)
             .replaceAll(definitionSet.typography.pathDelimiter, definitionSet.typography.blankspace)
             .replaceAll(definitionSet.typography.dashDelimiter, definitionSet.typography.blankspace)
-            .replaceAll(definitionSet.typography.dotDelimiter, definitionSet.typography.blankspace);
+            .replaceAll(definitionSet.typography.underscoreDelimiter, definitionSet.typography.blankspace);
     } //removeDelimiters
 
     return { toggleCase, titleCase, clearSplit, removeDelimiters, lowerFirstCharacterCase, }
