@@ -22,6 +22,37 @@ exports.createStringUtilitySet = definitionSet => {
         else
             return isLower ? upper : lower;
     }; //toggleCharacterCase
+
+    const characterCase = character => { // null, true (upper) or false (lower)
+        const lower = character.toLowerCase();
+        const upper = character.toUpperCase();
+        const isLower = lower == character;
+        const isUpper = upper == character;
+        if (isLower && isUpper) return null;
+        return isUpper;
+    }; //characterCase
+
+    const clearSplit = text => {
+        const split = text.split(definitionSet.typography.blankspace);
+        const reSplit = [];
+        for (const part of split)
+            if (part.length > 0) reSplit.push(part);
+        return reSplit;
+    }; //clearSplit
+
+    const splitLineByCase = text => {
+        let currentCase = null;
+        const result = [];
+        for (let index = 0; index < text.length; ++index) {
+            const character = text[index];
+            const aCase = characterCase(character);
+            if (aCase != currentCase)
+                result.push(definitionSet.typography.blankspace);
+            currentCase = aCase;    
+            result.push(character);
+        } //loop
+        return result.join(definitionSet.empty).trim();
+    }; //splitLineByCase
     
     const toggleCase = text => {
         if (!text) return text;
@@ -31,14 +62,6 @@ exports.createStringUtilitySet = definitionSet => {
         return characters.join(definitionSet.empty);
     }; //toggleCase
     
-    const clearSplit = text => {
-        const split = text.split(definitionSet.typography.blankspace);
-        const reSplit = [];
-        for (const part of split)
-            if (part.length > 0) reSplit.push(part);
-        return reSplit;
-    }; //clearSplit
-
     const lowerFirstCharacterCase = text =>
         text.length > 0 ? text[0].toLowerCase() + text.substring(1) : text;
 
@@ -66,6 +89,8 @@ exports.createStringUtilitySet = definitionSet => {
 
     const programmingSyntax = (text, punctuation) => forEachLine(text, line =>
         clearSplit(line).join(punctuation));
+
+    const splitByCase = text => forEachLine(text, line => splitLineByCase(line));
     
     const removePunctuation = text => {
         return text
@@ -75,6 +100,6 @@ exports.createStringUtilitySet = definitionSet => {
             .replaceAll(definitionSet.typography.underscoreSeparator, definitionSet.typography.blankspace);
     } //removePunctuation
 
-    return { titleCase, camelCase, toggleCase, programmingSyntax, removePunctuation, };
+    return { titleCase, camelCase, toggleCase, programmingSyntax, splitByCase, removePunctuation, };
 
 };

@@ -34,6 +34,7 @@ exports.commandMap = function (definitionSet, vscode, visibilityUpdater) {
         map.set("Kebab case", text => stringUtilitySet.programmingSyntax(text, definitionSet.typography.dashSeparator));
         map.set("Snake case", text => stringUtilitySet.programmingSyntax(text, definitionSet.typography.underscoreSeparator));
         map.set("Path", text => stringUtilitySet.programmingSyntax(text, definitionSet.typography.pathSeparator));
+        map.set("Split by case", text => stringUtilitySet.splitByCase(text));
         map.set("Remove punctuation", text => stringUtilitySet.removePunctuation(text));
         map.set(separator++, { label: "Where the result goes, editor or clipboard?", kind: vscode.QuickPickItemKind.Separator, });
         map.set(definitionSet.volatileCommands.targetClipboard, () => setTargetToClipboard(true));
