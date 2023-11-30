@@ -19,3 +19,7 @@ The last command repeats the most recent change case operation, if any. This ope
 * multiline operations
 * optional operation target: editor or clipboard
 * no external dependencies
+
+### Installation:
+
+[Yet Another Change Case On Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=sakryukov.ya-change-case)
