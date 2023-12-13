@@ -2,7 +2,7 @@
     "name": "ya-change-case",
     "displayName": "Yet Another Change Case",
     "description": "Change Case",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "publisher": "sakryukov",
     "homepage": "https://www.SAKryukov.org",
     "author": {
@@ -43,6 +43,16 @@
         ],
         "menus": {
             "commandPalette": [
+                {
+                    "command": "yacc.change.case",
+                    "when": "yacc.change.case.visible"
+                },
+                {
+                    "command": "yacc.change.case.again",
+                    "when": "yacc.change.case.again.visible"
+                }
+            ],
+            "editor/context": [
                 {
                     "command": "yacc.change.case",
                     "when": "yacc.change.case.visible"
